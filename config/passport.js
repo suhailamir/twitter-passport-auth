@@ -21,7 +21,7 @@ var configAuth = {
         'twitterAuth': {
             'consumerKey': 'bH6FU5R4bVQ5QJhYvNyFZywFm',
             'consumerSecret': '64VOfx9rmBBf98v7dNFQa9m4NEKsTpX82JSSyGlN5W4A4i8cTy',
-            'callbackURL': 'http://localhost:8080/auth/twitter/callback'
+            'callbackURL': 'http://162.244.76.162:8080/auth/twitter/callback'
         },
 
         'googleAuth': {
