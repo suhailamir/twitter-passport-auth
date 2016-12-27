@@ -8,7 +8,29 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('../app/models/user');
 
 // load the auth variables
-var configAuth = require('/auth'); // use this one for testing
+var configAuth = {
+
+        'facebookAuth': {
+            'clientID': 'your-secret-clientID-here', // your App ID
+            'clientSecret': 'your-client-secret-here', // your App Secret
+            'callbackURL': 'http://localhost:8080/auth/facebook/callback',
+            'profileURL': 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email'
+
+        },
+
+        'twitterAuth': {
+            'consumerKey': 'bH6FU5R4bVQ5QJhYvNyFZywFm',
+            'consumerSecret': '64VOfx9rmBBf98v7dNFQa9m4NEKsTpX82JSSyGlN5W4A4i8cTy',
+            'callbackURL': 'http://localhost:8080/auth/twitter/callback'
+        },
+
+        'googleAuth': {
+            'clientID': 'your-secret-clientID-here',
+            'clientSecret': 'your-client-secret-here',
+            'callbackURL': 'http://localhost:8080/auth/google/callback'
+        }
+
+    } // use this one for testing
 
 module.exports = function(passport) {
 
