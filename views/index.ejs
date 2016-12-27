@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/1.0/zaf_sdk.js"></script>
+<script>
+  var app = window.ZAFClient.init(function(context) {
+    console.log(context.currentUser);
+    console.log(context.currentAccount);
+
+    var currentUser = context.currentUser;
+    console.log('Hi ' + currentUser.name);
+  });
+
+
+  // app.postMessage('handlerToken', { auth_token: '458378987-dkWJZdjSwdEXVsN7vvG2ewP4mo5nUtkLfiYyMXN3' }); // post the message 'hello' to the Zendesk app
+
+  // listen to the 'app.registered' event, which is fired by the framework once the iframe is registered with the app
+  app.on('app.registered', function(data) {
+    // go nuts
+  });
+
+  app.on('helloIframe', function(data) { // listen to the 'helloIframe' message sent from the app
+    if (data.bar) {
+      // app says hello
+    }
+  });
+</script>
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="jumbotron text-center">
+
+        <p>Login with:</p>
+
+        <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
+    </div>
+
+  
+
+</div>
+</body>
+</html>
